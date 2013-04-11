@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+	<title>Untitled</title>
+<!--Adobe Edge Runtime-->
+    <script type="text/javascript" charset="utf-8" src="index_edgePreload.js"></script>
+    <script type="text/javascript" src="jquery.js"></script>
+    <style>
+        .edgeLoad-EDGE-6279111 { visibility:hidden; }
+        
+        
+		.Stage_manga-frog-final-back-swamp-02_id {
+         /*
+            -webkit-filter: custom( url( shaders/ripples.vs ) mix( url( shaders/ripples.fs)  multiply source-atop), 100 100 border-box, transform perspective(2000) scale(0.99) rotateX(20deg) rotateY(0deg) rotateZ(0deg), time 0, maxAmplitude 10, decayTime 40, center -0.05 0.02, s 2, radiusScale 9.69);
+			 -webkit-transition: -webkit-filter 3s; 
+             */
+        }
+		
+		.Stage_manga-frog-final-back-swamp-02_id.ripple {
+            -webkit-filter: custom( url( shaders/ripples.vs ) mix( url( shaders/ripples.fs)  multiply source-atop), 100 100 border-box, transform perspective(2000) scale(0.99) rotateX(20deg) rotateY(0deg) rotateZ(0deg), time 20.0, maxAmplitude 10, decayTime 40, center -0.05 0.02, s 2, radiusScale 9.69);
+        }
+
+    </style>
+<!--Adobe Edge Runtime End-->
+<!-- Place for CSS customer filters -->
+	<script type="text/javascript">
+		function playRippleEffect(position){
+			/*
+			1) 177, 344
+			2) 433, 400
+			3) 532, 285
+			total dims: (624, 279)
+			*/
+			//console.log(position);
+			var cx, cy;
+			switch (position) {
+				case 1:
+				   cx = 0.27;
+				   cy = -0.18;
+				   break;
+
+				case 2:
+                   cx = -0.3;
+                   cy = 0.05;
+				   break;
+
+				default:
+				   cx = 0.1;
+				   cy = 0.25;
+				   break;
+			}
+            
+                var bg = $(".Stage_manga-frog-final-back-swamp-02_id");
+                var customFilter = "custom(url(shaders/ripples.vs) mix(url(shaders/ripples.fs) multiply source-atop), 100 100 border-box, transform perspective(2000) rotateX(20deg), time 0, maxAmplitude 15, decayTime 40, center " + cx + " " + cy + ", s 2, radiusScale 10)";
+                bg.css({
+                    "-webkit-filter" : customFilter,
+                    "-webkit-transition" : "-webkit-filter 5s"
+                });
+                
+                window.setTimeout(function () {
+                    var bg = $(".Stage_manga-frog-final-back-swamp-02_id");
+                    customFilter = "custom(url(shaders/ripples.vs) mix(url(shaders/ripples.fs) multiply source-atop), 100 100 border-box, transform perspective(2000) rotateX(20deg), time 40, maxAmplitude 15, decayTime 40, center " + cx + " " + cy + ", s 2, radiusScale 10)";
+                    bg.css("-webkit-filter", customFilter);
+                    bg.on('webkitTransitionEnd', function() {
+                        bg.css({
+                            "-webkit-filter": "",
+                            "-webkit-transition": ""
+                        });
+                        bg.off('webkitTransitionEnd');
+                    });
+                }, 0);
+		}
+	</script>
+
+</head>
+<body style="margin:0;padding:0;">
+	<div id="Stage" class="EDGE-6279111">
+	
+        <div id="Stage_manga-frog-final-back-01" style="display:none;"></div>
+        <div id="Stage_manga-frog-final-back-swamp-02" style="display:none;"></div>
+        <div id="Stage_manga-frog-final-back-02" style="display:none;"></div>
+        <div id="Stage_manga-frog-final-back-02Copy" style="display:none;"></div>
+        <div id="Stage_manga-frog-final-back-02Copy2" style="display:none;"></div>
+        <div id="Stage_myDuck" style="display:none;">
+            <div id="Stage_myDuck_duck-03"></div>
+            <div id="Stage_myDuck_wave"></div>
+        </div>
+        <div id="Stage_roseauxWind" style="display:none;">
+            <div id="Stage_roseauxWind_roseaux-03"></div>
+        </div>
+        <div id="Stage_manga-frog-final-back-flowers-03" style="display:none;"></div>
+        <div id="Stage_frogStates" style="display:none;">
+            <div id="Stage_frogStates_Ellipse"></div>
+            <div id="Stage_frogStates_legs"></div>
+            <div id="Stage_frogStates_Layer_30"></div>
+            <div id="Stage_frogStates_body"></div>
+            <div id="Stage_frogStates_shoulders"></div>
+            <div id="Stage_frogStates_bill"></div>
+            <div id="Stage_frogStates_headGreen"></div>
+            <div id="Stage_frogStates_headBottom"></div>
+            <div id="Stage_frogStates_mouth"></div>
+            <div id="Stage_frogStates_tongue"></div>
+            <div id="Stage_frogStates_eyes"></div>
+            <div id="Stage_frogStates_nose"></div>
+            <div id="Stage_frogStates_shadow"></div>
+            <div id="Stage_frogStates_armL"></div>
+            <div id="Stage_frogStates_armR"></div>
+            <div id="Stage_frogStates_bubbleTip">
+                <div id="Stage_frogStates_bubbleTip_bubble"></div>
+                <div id="Stage_frogStates_bubbleTip_Text">CLICK ON<br>MY BELLY</div>
+            </div>
+        </div>
+        <div id="Stage_manga-frog-final-splash-012" class="edgeLoad-EDGE-6279111"></div>
+        <div id="Stage_start-01" class="edgeLoad-EDGE-6279111"></div>
+    </div>
+</body>
+</html>
